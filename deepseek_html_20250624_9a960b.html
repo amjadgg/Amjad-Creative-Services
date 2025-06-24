@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amjad Creative Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f8faff 0%, #f0f5ff 100%);
+      color: #333;
+      line-height: 1.6;
+      position: relative;
+      padding-bottom: 100px;
+    }
+    
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+    header {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+      position: relative;
+      overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      margin-bottom: 50px;
+    }
+    
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon fill="rgba(255,255,255,0.05)" points="0,100 100,0 100,100"/></svg>');
+      background-size: cover;
+    }
+    
+    .header-content {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+    
+    .tagline {
+      font-size: 1.4rem;
+      opacity: 0.9;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+    
+    .highlight {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 20px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-top: 20px;
+      font-weight: 500;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .category {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      padding: 35px;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      position: relative;
+      overflow: hidden;
+      border: none;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    .category:hover {
+      transform: translateY(-10px) !important;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    }
+    
+    .category-icon {
+      font-size: 2.8rem;
+      color: #6a11cb;
+      margin-bottom: 25px;
+      text-align: center;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: rgba(106, 17, 203, 0.1);
+    }
+    
+    .category h2 {
+      color: #2575fc;
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 1.9rem;
+      position: relative;
+      padding-bottom: 15px;
+      font-weight: 600;
+    }
+    
+    .category h2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      border-radius: 3px;
+    }
+    
+    .services-list {
+      list-style: none;
+    }
+    
+    .service-item {
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .service-item:hover {
+      background-color: rgba(106, 17, 203, 0.03);
+      transform: translateX(5px);
+    }
+    
+    .service-item:last-child {
+      border-bottom: none;
+    }
+    
+    .service-name {
+      font-weight: 500;
+      flex: 1;
+      color: #444;
+    }
+    
+    .service-price {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-weight: 600;
+      min-width: 120px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(106, 17, 203, 0.2);
+      font-size: 0.95rem;
+    }
+    
+    .guarantee {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 50px 0;
+      flex-wrap: wrap;
+    }
+    
+    .guarantee-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: white;
+      padding: 18px 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+    
+    .guarantee-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    
+    .guarantee-item i {
+      color: #2575fc;
+      font-size: 1.6rem;
+    }
+    
+    .guarantee-item span {
+      font-weight: 500;
+    }
+    
+    footer {
+      background: linear-gradient(135deg, #8aedff, #8aedff);
+      color: #080808;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 80px;
+      clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+      padding-top: 60px;
+    }
+    
+    footer h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-item:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-3px);
+    }
+    
+    .contact-item i {
+      color: #3498db;
+      font-size: 1.2rem;
+    }
+    
+    /* Calculator Tool Styles */
+    .calculator-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      border: none;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      box-shadow: 0 8px 25px rgba(106, 17, 203, 0.4);
+      cursor: pointer;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 8px 25px rgba(106, 17, 203, 0.4); }
+      50% { transform: scale(1.1); box-shadow: 0 12px 30px rgba(106, 17, 203, 0.5); }
+      100% { transform: scale(1); box-shadow: 0 8px 25px rgba(106, 17, 203, 0.4); }
+    }
+    
+    .calculator-btn:hover {
+      transform: scale(1.1) rotate(10deg);
+      box-shadow: 0 12px 30px rgba(106, 17, 203, 0.5);
+      animation: none;
+    }
+    
+    .calculator-container {
+      position: fixed;
+      bottom: 120px;
+      right: 30px;
+      width: 380px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      z-index: 1000;
+      padding: 25px;
+      transform: translateY(20px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .calculator-container.active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .calculator-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #f0f0f0;
+    }
+    
+    .calculator-header h3 {
+      color: #2575fc;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    
+    .close-calculator {
+      background: #f0f0f0;
+      border: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      color: #666;
+    }
+    
+    .close-calculator:hover {
+      background: #e0e0e0;
+      transform: rotate(90deg);
+      color: #333;
+    }
+    
+    .calculator-form {
+      margin-bottom: 20px;
+      max-height: 300px;
+      overflow-y: auto;
+      padding-right: 10px;
+    }
+    
+    .calculator-form::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .calculator-form::-webkit-scrollbar-thumb {
+      background: #6a11cb;
+      border-radius: 3px;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .form-group:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #444;
+      font-size: 0.95rem;
+    }
+    
+    .service-select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      background: #f9f9f9;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .service-select:focus {
+      border-color: #6a11cb;
+      box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.1);
+      outline: none;
+    }
+    
+    .quantity-control {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .quantity-btn {
+      background: #6a11cb;
+      color: white;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    
+    .quantity-btn:hover {
+      background: #2575fc;
+      transform: scale(1.1);
+    }
+    
+    .quantity-input {
+      width: 60px;
+      text-align: center;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    
+    .add-service-btn {
+      background: #2575fc;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 15px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .add-service-btn:hover {
+      background: #6a11cb;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(37, 117, 252, 0.3);
+    }
+    
+    .remove-service-btn {
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 12px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .remove-service-btn:hover {
+      background: #ff5252;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+    }
+    
+    .calculator-summary {
+      background: #f8f9ff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    
+    .summary-item.total {
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px dashed #ccc;
+    }
+    
+    .first-order-discount {
+      background: linear-gradient(135deg, #fff9c4 0%, #ffecb3 100%);
+      border: 1px solid #ffd54f;
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .first-order-discount i {
+      color: #f57c00;
+      font-size: 1.4rem;
+    }
+    
+    .calculate-btn {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1.05rem;
+      font-weight: 600;
+      width: 100%;
+      box-shadow: 0 5px 15px rgba(106, 17, 203, 0.3);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    
+    .calculate-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(106, 17, 203, 0.4);
+    }
+    
+    .invoice-btn {
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1.05rem;
+      font-weight: 600;
+      width: 100%;
+      box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+      transition: all 0.3s ease;
+      margin-top: 12px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    
+    .whatsapp-btn {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1.05rem;
+      font-weight: 600;
+      width: 100%;
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+      transition: all 0.3s ease;
+      margin-top: 12px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    
+    .invoice-btn:hover, .whatsapp-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+    }
+    
+    .service-added {
+      animation: highlight 1s;
+    }
+    
+    @keyframes highlight {
+      0% { background-color: rgba(106, 17, 203, 0.1); }
+      100% { background-color: transparent; }
+    }
+    
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 110px;
+      right: 30px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      border: none;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+      cursor: pointer;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      transition: all 0.3s ease;
+      animation: pulse-whatsapp 2s infinite;
+    }
+    
+    @keyframes pulse-whatsapp {
+      0% { transform: scale(1); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); }
+      50% { transform: scale(1.1); box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5); }
+      100% { transform: scale(1); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); }
+    }
+    
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+      animation: none;
+    }
+    
+    @media (max-width: 768px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      .tagline {
+        font-size: 1.1rem;
+      }
+      
+      .service-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .service-price {
+        margin-top: 10px;
+        align-self: flex-end;
+      }
+      
+      .calculator-container {
+        width: 90%;
+        right: 5%;
+        left: 5%;
+      }
+      
+      .calculator-btn, .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+      }
+      
+      .whatsapp-float {
+        bottom: 90px;
+      }
+      
+      header {
+        padding: 40px 20px;
+        clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+      }
+      
+      footer {
+        clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      .tagline {
+        font-size: 1rem;
+      }
+      
+      .highlight {
+        font-size: 0.9rem;
+        padding: 6px 15px;
+      }
+      
+      .category {
+        padding: 25px;
+      }
+      
+      .guarantee-item {
+        padding: 15px 20px;
+        font-size: 0.9rem;
+      }
+      
+      .contact-item {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1><i class="fas fa-palette"></i> Amjad Creative Services</h1>
+      <p class="tagline">Professional design solutions to make your brand stand out</p>
+      <div class="highlight">20+ happy clients | 100% satisfaction guaranteed</div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="guarantee">
+      <div class="guarantee-item">
+        <i class="fas fa-bolt"></i>
+        <span>Fast Delivery</span>
+      </div>
+      <div class="guarantee-item">
+        <i class="fas fa-redo"></i>
+        <span>Similar designs available</span>
+      </div>
+      <div class="guarantee-item">
+        <i class="fas fa-shield-alt"></i>
+        <span>Secure Payment</span>
+      </div>
+      <div class="guarantee-item">
+        <i class="fas fa-headset"></i>
+        <span>24/7 Support</span>
+      </div>
+    </div>
+
+    <div class="services-grid">
+      <div class="category">
+        <div class="category-icon">
+          <i class="fas fa-pencil-ruler"></i>
+        </div>
+        <h2>Logo Design</h2>
+        <ul class="services-list">
+          <li class="service-item" data-name="Simple Logo (Basic)" data-price="73.4">
+            <span class="service-name">Simple Logo (Basic)</span>
+            <span class="service-price">$73.4</span>
+          </li>
+          <li class="service-item" data-name="Professional Logo (3 options)" data-price="105.0">
+            <span class="service-name">Professional Logo (3 options)</span>
+            <span class="service-price">$105.0</span>
+          </li>
+          <li class="service-item" data-name="Corporate Identity (Logo + colors + fonts)" data-price="157.2">
+            <span class="service-name">Corporate Identity (Logo + colors + fonts)</span>
+            <span class="service-price">$157.2</span>
+          </li>
+          <li class="service-item" data-name="Revision of Existing Logo" data-price="52.4">
+            <span class="service-name">Revision of Existing Logo</span>
+            <span class="service-price">$52.4</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">
+          <i class="fas fa-box-open"></i>
+        </div>
+        <h2>Packaging Design</h2>
+        <ul class="services-list">
+          <li class="service-item" data-name="Single-Sided Packaging Design (1–2 sides)" data-price="52.4">
+            <span class="service-name">Single-Sided Packaging Design (1–2 sides)</span>
+            <span class="service-price">$52.4</span>
+          </li>
+          <li class="service-item" data-name="Multi-Sided Packaging Design (1–5 sides)" data-price="73.4">
+            <span class="service-name">Multi-Sided Packaging Design (1–5 sides)</span>
+            <span class="service-price">$73.4</span>
+          </li>
+          <li class="service-item" data-name="Product Label Design" data-price="21.0">
+            <span class="service-name">Product Label Design</span>
+            <span class="service-price">$21.0</span>
+          </li>
+          <li class="service-item" data-name="Premium Gift Box Design" data-price="157.2">
+            <span class="service-name">Premium Gift Box Design</span>
+            <span class="service-price">$157.2</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">
+          <i class="fas fa-film"></i>
+        </div>
+        <h2>Video Editing & Montage</h2>
+        <ul class="services-list">
+          <li class="service-item" data-name="Basic Video Editing (hourly)" data-price="105.0">
+            <span class="service-name">Basic Video Editing (hourly)</span>
+            <span class="service-price">$105.0</span>
+          </li>
+          <li class="service-item" data-name="After Effects Animation (hourly)" data-price="210.0">
+            <span class="service-name">After Effects Animation (hourly)</span>
+            <span class="service-price">$210.0</span>
+          </li>
+          <li class="service-item" data-name="Advertisement Video (30–60s)" data-price="157.2">
+            <span class="service-name">Advertisement Video (30–60s)</span>
+            <span class="service-price">$157.2</span>
+          </li>
+          <li class="service-item" data-name="Comprehensive Promo Video (2–3 min)" data-price="366.9">
+            <span class="service-name">Comprehensive Promo Video (2–3 min)</span>
+            <span class="service-price">$366.9</span>
+          </li>
+          <li class="service-item" data-name="AI Photo-to-Video (per item)" data-price="26.2">
+            <span class="service-name">AI Photo-to-Video (per item)</span>
+            <span class="service-price">$26.2</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">
+          <i class="fas fa-ad"></i>
+        </div>
+        <h2>Graphic Design & Marketing</h2>
+        <ul class="services-list">
+          <li class="service-item" data-name="Single Ad Poster" data-price="5.2">
+            <span class="service-name">Single Ad Poster</span>
+            <span class="service-price">$5.2</span>
+          </li>
+          <li class="service-item" data-name="5‑Poster Package" data-price="26.2">
+            <span class="service-name">5‑Poster Package</span>
+            <span class="service-price">$26.2</span>
+          </li>
+          <li class="service-item" data-name="20‑Poster Package" data-price="36.7">
+            <span class="service-name">20‑Poster Package</span>
+            <span class="service-price">$36.7</span>
+          </li>
+          <li class="service-item" data-name="Business Card Design" data-price="26.2">
+            <span class="service-name">Business Card Design</span>
+            <span class="service-price">$26.2</span>
+          </li>
+          <li class="service-item" data-name="Brochure Design (single-sided)" data-price="52.4">
+            <span class="service-name">Brochure Design (single-sided)</span>
+            <span class="service-price">$52.4</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="category">
+        <div class="category-icon">
+          <i class="fas fa-camera-retro"></i>
+        </div>
+        <h2>Photo Editing</h2>
+        <ul class="services-list">
+          <li class="service-item" data-name="Basic Color Correction (per photo)" data-price="5.2">
+            <span class="service-name">Basic Color Correction (per photo)</span>
+            <span class="service-price">$5.2</span>
+          </li>
+          <li class="service-item" data-name="Background Replacement (per photo)" data-price="10.5">
+            <span class="service-name">Background Replacement (per photo)</span>
+            <span class="service-price">$10.5</span>
+          </li>
+          <li class="service-item" data-name="Portrait Retouching (skin, eyes, etc.)" data-price="15.7">
+            <span class="service-name">Portrait Retouching (skin, eyes, etc.)</span>
+            <span class="service-price">$15.7</span>
+          </li>
+          <li class="service-item" data-name="Product Photo Editing" data-price="7.3">
+            <span class="service-name">Product Photo Editing</span>
+            <span class="service-price">$7.3</span>
+          </li>
+          <li class="service-item" data-name="10‑Photo Package Editing" data-price="73.4">
+            <span class="service-name">10‑Photo Package Editing</span>
+            <span class="service-price">$73.4</span>
+          </li>
+          <li class="service-item" data-name="20‑Photo Package Editing" data-price="126.0">
+            <span class="service-name">20‑Photo Package Editing</span>
+            <span class="service-price">$126.0</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="category">
+        <div class="category-icon">
+          <i class="fas fa-layer-group"></i>
+        </div>
+        <h2>Other Services</h2>
+        <ul class="services-list">
+          <li class="service-item" data-name="Website UI Design" data-price="210.0">
+            <span class="service-name">Website UI Design</span>
+            <span class="service-price">$210.0</span>
+          </li>
+          <li class="service-item" data-name="Social Media Cover Photo" data-price="10.5">
+            <span class="service-name">Social Media Cover Photo</span>
+            <span class="service-price">$10.5</span>
+          </li>
+          <li class="service-item" data-name="Mobile App UI Design" data-price="315.0">
+            <span class="service-name">Mobile App UI Design</span>
+            <span class="service-price">$315.0</span>
+          </li>
+          <li class="service-item" data-name="Caricature Drawing" data-price="26.2">
+            <span class="service-name">Caricature Drawing</span>
+            <span class="service-price">$26.2</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <h3><i class="fas fa-palette"></i> Amjad Creative Services</h3>
+    <p>Contact us for professional solutions</p>
+    <div class="contact-info">
+      <a href="tel:+905385818771" class="contact-item">
+        <i class="fas fa-phone"></i>
+        <span>+90 538 581 87 71</span>
+      </a>
+      <a href="mailto:amjadhammad004@gmail.com" class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <span>amjadhammad004@gmail.com</span>
+      </a>
+      <a href="https://instagram.com/amjadgg" target="_blank" class="contact-item">
+        <i class="fab fa-instagram"></i>
+        <span>@amjadgg</span>
+      </a>
+      <a href="https://wa.me/905385818771" target="_blank" class="contact-item">
+        <i class="fab fa-whatsapp"></i>
+        <span>+90 538 581 87 71</span>
+      </a>
+    </div>
+    <p style="margin-top: 20px; opacity: 0.8; font-size: 0.9rem;">&copy; 2025 Amjad Creative Services. All rights reserved.</p>
+  </footer>
+
+  <!-- Calculator Tool Button -->
+  <button class="calculator-btn" id="calculatorBtn">
+    <i class="fas fa-calculator"></i>
+  </button>
+  
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/905385818771" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Calculator Tool Box -->
+  <div class="calculator-container" id="calculatorContainer">
+    <div class="calculator-header">
+      <h3>Price Calculator</h3>
+      <button class="close-calculator" id="closeCalculator">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="first-order-discount" id="discountBanner">
+      <i class="fas fa-tag"></i>
+      <span>Get <strong>15% discount</strong> on your first order!</span>
+    </div>
+    
+    <div class="calculator-form" id="calculatorForm">
+      <!-- Service selection fields will be created here -->
+    </div>
+    
+    <div class="calculator-summary">
+      <div class="summary-item">
+        <span>Subtotal:</span>
+        <span id="subtotal">$0</span>
+      </div>
+      <div class="summary-item" id="discountRow">
+        <span>Discount (15%):</span>
+        <span id="discount">$0</span>
+      </div>
+      <div class="summary-item total">
+        <span>Total Price:</span>
+        <span id="total">$0</span>
+      </div>
+    </div>
+    
+    <button class="calculate-btn" id="calculateBtn">
+      <i class="fas fa-calculator"></i> Calculate Price
+    </button>
+    
+    <button class="invoice-btn" id="invoiceBtn">
+      <i class="fas fa-file-invoice"></i> Download Invoice
+    </button>
+    
+    <button class="whatsapp-btn" id="whatsappBtn">
+      <i class="fab fa-whatsapp"></i> Send via WhatsApp
+    </button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const categories = document.querySelectorAll('.category');
+      
+      // Animate categories on load
+      categories.forEach((category, index) => {
+        setTimeout(() => {
+          category.style.opacity = '1';
+          category.style.transform = 'translateY(0)';
+        }, 200 * index);
+      });
+      
+      // Calculator functions
+      const calculatorBtn = document.getElementById('calculatorBtn');
+      const closeCalculator = document.getElementById('closeCalculator');
+      const calculatorContainer = document.getElementById('calculatorContainer');
+      const calculatorForm = document.getElementById('calculatorForm');
+      const calculateBtn = document.getElementById('calculateBtn');
+      const invoiceBtn = document.getElementById('invoiceBtn');
+      const whatsappBtn = document.getElementById('whatsappBtn');
+      const discountBanner = document.getElementById('discountBanner');
+      const discountRow = document.getElementById('discountRow');
+      
+      // Local storage key for discount tracking
+      const DISCOUNT_KEY = 'amjad_discount_used';
+      const FIRST_VISIT_KEY = 'amjad_first_visit';
+      
+      // Discount status
+      let isDiscountActive = false;
+      
+      // First visit check
+      if (!localStorage.getItem(FIRST_VISIT_KEY)) {
+        // First visit, store timestamp
+        const now = new Date();
+        localStorage.setItem(FIRST_VISIT_KEY, now.getTime());
+        
+        // Set timeout for 1 hour expiration
+        setTimeout(() => {
+          if (!localStorage.getItem(DISCOUNT_KEY)) {
+            localStorage.setItem(DISCOUNT_KEY, 'expired');
+            updateDiscountUI();
+          }
+        }, 60 * 60 * 1000); // 1 hour = 60 minutes * 60 seconds * 1000 milliseconds
+      }
+      
+      // Update discount UI
+      function updateDiscountUI() {
+        const discountUsed = localStorage.getItem(DISCOUNT_KEY);
+        const firstVisitTime = parseInt(localStorage.getItem(FIRST_VISIT_KEY));
+        const now = new Date().getTime();
+        
+        // Check if discount is active
+        isDiscountActive = !discountUsed && (now - firstVisitTime < 60 * 60 * 1000);
+        
+        // Update UI
+        if (isDiscountActive) {
+          discountBanner.style.display = 'flex';
+          discountRow.style.display = 'flex';
+        } else {
+          discountBanner.style.display = 'none';
+          discountRow.style.display = 'none';
+        }
+      }
+      
+      // Check discount status on page load
+      updateDiscountUI();
+      
+      // Service price list
+      const services = [
+        { name: "Simple Logo (Basic)", price: 73.4 },
+        { name: "Professional Logo (3 options)", price: 105.0 },
+        { name: "Corporate Identity (Logo + colors + fonts)", price: 157.2 },
+        { name: "Revision of Existing Logo", price: 52.4 },
+        { name: "Single-Sided Packaging Design (1–2 sides)", price: 52.4 },
+        { name: "Multi-Sided Packaging Design (1–5 sides)", price: 73.4 },
+        { name: "Product Label Design", price: 21.0 },
+        { name: "Premium Gift Box Design", price: 157.2 },
+        { name: "Basic Video Editing (hourly)", price: 105.0 },
+        { name: "After Effects Animation (hourly)", price: 210.0 },
+        { name: "Advertisement Video (30–60s)", price: 157.2 },
+        { name: "Comprehensive Promo Video (2–3 min)", price: 366.9 },
+        { name: "AI Photo-to-Video (per item)", price: 26.2 },
+        { name: "Single Ad Poster", price: 5.2 },
+        { name: "5‑Poster Package", price: 26.2 },
+        { name: "20‑Poster Package", price: 36.7 },
+        { name: "Business Card Design", price: 26.2 },
+        { name: "Brochure Design (single-sided)", price: 52.4 },
+        { name: "Basic Color Correction (per photo)", price: 5.2 },
+        { name: "Background Replacement (per photo)", price: 10.5 },
+        { name: "Portrait Retouching (skin, eyes, etc.)", price: 15.7 },
+        { name: "Product Photo Editing", price: 7.3 },
+        { name: "10‑Photo Package Editing", price: 73.4 },
+        { name: "20‑Photo Package Editing", price: 126.0 },
+        { name: "Website UI Design", price: 210.0 },
+        { name: "Social Media Cover Photo", price: 10.5 },
+        { name: "Mobile App UI Design", price: 315.0 },
+        { name: "Caricature Drawing", price: 26.2 }
+      ];
+      
+      // Create service options
+      function createServiceOptions() {
+        let html = '';
+        
+        // Create first service selection field
+        html += `
+          <div class="form-group">
+            <label>Select Service</label>
+            <select class="service-select" name="service[]">
+              <option value="">-- Select service --</option>
+              ${services.map(service => 
+                `<option value="${service.price}">${service.name} - $${service.price.toFixed(2)}</option>`
+              ).join('')}
+            </select>
+            <div class="quantity-control">
+              <button class="quantity-btn minus" type="button">-</button>
+              <input type="number" class="quantity-input" value="1" min="1">
+              <button class="quantity-btn plus" type="button">+</button>
+            </div>
+          </div>
+        `;
+        
+        calculatorForm.innerHTML = html;
+        
+        // Add new service button
+        const addButton = document.createElement('button');
+        addButton.className = 'add-service-btn';
+        addButton.innerHTML = '<i class="fas fa-plus"></i> Add Another Service';
+        addButton.onclick = addServiceField;
+        calculatorForm.appendChild(addButton);
+        
+        // Add quantity button event listeners
+        addQuantityEventListeners();
+      }
+      
+      // Add new service field
+      function addServiceField() {
+        const newService = document.createElement('div');
+        newService.className = 'form-group';
+        newService.innerHTML = `
+          <label>Select Service</label>
+          <select class="service-select" name="service[]">
+            <option value="">-- Select service --</option>
+            ${services.map(service => 
+              `<option value="${service.price}">${service.name} - $${service.price.toFixed(2)}</option>`
+            ).join('')}
+          </select>
+          <div class="quantity-control">
+            <button class="quantity-btn minus" type="button">-</button>
+            <input type="number" class="quantity-input" value="1" min="1">
+            <button class="quantity-btn plus" type="button">+</button>
+          </div>
+          <button class="remove-service-btn" type="button">
+            <i class="fas fa-trash"></i> Remove
+          </button>
+        `;
+        
+        // Add event listener to remove button
+        const removeBtn = newService.querySelector('.remove-service-btn');
+        removeBtn.addEventListener('click', function() {
+          newService.remove();
+        });
+        
+        // Insert before add button
+        const addButton = document.querySelector('.add-service-btn');
+        calculatorForm.insertBefore(newService, addButton);
+        
+        // Add quantity button event listeners
+        addQuantityEventListeners(newService);
+      }
+      
+      // Add event listeners for quantity buttons
+      function addQuantityEventListeners(container = document) {
+        const minusBtns = container.querySelectorAll('.minus');
+        const plusBtns = container.querySelectorAll('.plus');
+        
+        minusBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const input = this.nextElementSibling;
+            if (input.value > 1) {
+              input.value = parseInt(input.value) - 1;
+            }
+          });
+        });
+        
+        plusBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const input = this.previousElementSibling;
+            input.value = parseInt(input.value) + 1;
+          });
+        });
+      }
+      
+      // Calculate total
+      function calculateTotal() {
+        const serviceGroups = document.querySelectorAll('.form-group');
+        let subtotal = 0;
+        let selectedServices = [];
+        
+        serviceGroups.forEach(group => {
+          const select = group.querySelector('.service-select');
+          const quantityInput = group.querySelector('.quantity-input');
+          
+          if (select.value) {
+            const price = parseFloat(select.value);
+            const quantity = parseInt(quantityInput.value) || 1;
+            const total = price * quantity;
+            subtotal += total;
+            
+            selectedServices.push({
+              name: select.options[select.selectedIndex].text.split(' - ')[0],
+              price: price,
+              quantity: quantity,
+              total: total
+            });
+          }
+        });
+        
+        // Calculate discount (15%) - only if active
+        let discount = 0;
+        let total = subtotal;
+        
+        if (isDiscountActive) {
+          discount = subtotal * 0.15;
+          total = subtotal - discount;
+        }
+        
+        // Display results
+        document.getElementById('subtotal').textContent = '$' + subtotal.toFixed(2);
+        document.getElementById('discount').textContent = '$' + discount.toFixed(2);
+        document.getElementById('total').textContent = '$' + total.toFixed(2);
+        
+        // Show invoice and WhatsApp buttons and store data
+        if (subtotal > 0) {
+          invoiceBtn.style.display = 'flex';
+          whatsappBtn.style.display = 'flex';
+          invoiceBtn.dataset.services = JSON.stringify(selectedServices);
+          invoiceBtn.dataset.subtotal = subtotal.toFixed(2);
+          invoiceBtn.dataset.discount = discount.toFixed(2);
+          invoiceBtn.dataset.total = total.toFixed(2);
+          invoiceBtn.dataset.hasDiscount = isDiscountActive;
+        } else {
+          invoiceBtn.style.display = 'none';
+          whatsappBtn.style.display = 'none';
+        }
+      }
+      
+      // Generate invoice
+      function generateInvoice() {
+        const services = JSON.parse(invoiceBtn.dataset.services);
+        const subtotal = invoiceBtn.dataset.subtotal;
+        const discount = invoiceBtn.dataset.discount;
+        const total = invoiceBtn.dataset.total;
+        const hasDiscount = invoiceBtn.dataset.hasDiscount === 'true';
+        
+        // Mark discount as used (only first time)
+        if (hasDiscount && !localStorage.getItem(DISCOUNT_KEY)) {
+          localStorage.setItem(DISCOUNT_KEY, 'used');
+          updateDiscountUI();
+        }
+        
+        // Create invoice HTML content
+        let invoiceHTML = `
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Amjad Services - Invoice</title>
+            <style>
+              body {
+                font-family: 'Poppins', Arial, sans-serif;
+                line-height: 1.6;
+                color: #333;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 30px;
+              }
+              .invoice-header {
+                text-align: center;
+                margin-bottom: 30px;
+                border-bottom: 2px solid #6a11cb;
+                padding-bottom: 20px;
+              }
+              .invoice-header h1 {
+                color: #6a11cb;
+                margin-bottom: 10px;
+                font-size: 2.2rem;
+              }
+              .invoice-info {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 30px;
+                flex-wrap: wrap;
+              }
+              .invoice-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 30px;
+              }
+              .invoice-table th, .invoice-table td {
+                border: 1px solid #ddd;
+                padding: 12px;
+                text-align: left;
+              }
+              .invoice-table th {
+                background-color: #6a11cb;
+                color: white;
+              }
+              .invoice-table tr:nth-child(even) {
+                background-color: #f9f9f9;
+              }
+              .invoice-totals {
+                float: right;
+                width: 300px;
+                margin-top: 20px;
+              }
+              .invoice-totals table {
+                width: 100%;
+                border-collapse: collapse;
+              }
+              .invoice-totals td {
+                padding: 10px;
+                border: 1px solid #ddd;
+              }
+              .invoice-totals td:last-child {
+                text-align: right;
+                font-weight: bold;
+              }
+              .invoice-totals .total-row {
+                font-size: 1.1em;
+                font-weight: bold;
+                background-color: #f8f8f8;
+              }
+              .invoice-footer {
+                margin-top: 50px;
+                text-align: center;
+                font-size: 0.9em;
+                color: #777;
+                border-top: 1px solid #ddd;
+                padding-top: 20px;
+                clear: both;
+              }
+              .logo {
+                font-size: 1.8rem;
+                margin-bottom: 10px;
+                color: #6a11cb;
+              }
+              .discount-note {
+                background-color: #fff9c4;
+                padding: 10px;
+                border-radius: 5px;
+                margin-top: 20px;
+                font-size: 0.9em;
+                text-align: center;
+              }
+            </style>
+          </head>
+          <body>
+            <div class="invoice-header">
+              <div class="logo"><i class="fas fa-palette"></i> AMJAD</div>
+              <h1>CREATIVE SERVICES</h1>
+              <p>Professional Design Solutions</p>
+            </div>
+            
+            <div class="invoice-info">
+              <div>
+                <p><strong>Invoice No:</strong> AMJ-${Math.floor(Math.random() * 10000)}</p>
+                <p><strong>Date:</strong> ${new Date().toLocaleDateString('en-US')}</p>
+              </div>
+              <div>
+                <p><strong>Customer:</strong> [Customer Name]</p>
+                <p><strong>Contact:</strong> [Phone/Email]</p>
+              </div>
+            </div>
+            
+            <table class="invoice-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Service Name</th>
+                  <th>Unit Price</th>
+                  <th>Qty</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+        `;
+        
+        // Add services
+        services.forEach((service, index) => {
+          invoiceHTML += `
+            <tr>
+              <td>${index + 1}</td>
+              <td>${service.name}</td>
+              <td>$${service.price.toFixed(2)}</td>
+              <td>${service.quantity}</td>
+              <td>$${service.total.toFixed(2)}</td>
+            </tr>
+          `;
+        });
+        
+        // Add totals
+        invoiceHTML += `
+              </tbody>
+            </table>
+            
+            <div class="invoice-totals">
+              <table>
+                <tr>
+                  <td>Subtotal:</td>
+                  <td>$${parseFloat(subtotal).toFixed(2)}</td>
+                </tr>
+        `;
+        
+        // Add discount row (if applicable)
+        if (hasDiscount) {
+          invoiceHTML += `
+                <tr>
+                  <td>Discount (15%):</td>
+                  <td>$${parseFloat(discount).toFixed(2)}</td>
+                </tr>
+          `;
+        }
+        
+        invoiceHTML += `
+                <tr class="total-row">
+                  <td>TOTAL:</td>
+                  <td>$${parseFloat(total).toFixed(2)}</td>
+                </tr>
+              </table>
+            </div>
+        `;
+        
+        // Add discount note (if applicable)
+        if (hasDiscount) {
+          invoiceHTML += `
+            <div class="discount-note">
+              <i class="fas fa-tag"></i> <strong>15% first order discount</strong> has been applied.
+            </div>
+          `;
+        }
+        
+        invoiceHTML += `
+            <div class="invoice-footer">
+              <p>Thank you for your business! • amjadhammad004@gmail.com • +90 538 581 87 71</p>
+              <p>This invoice was generated electronically and does not require a signature.</p>
+            </div>
+          </body>
+          </html>
+        `;
+        
+        // Download as HTML
+        const blob = new Blob([invoiceHTML], { type: 'text/html' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `Amjad_Invoice_${new Date().toISOString().slice(0, 10)}.html`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+      
+      // Send via WhatsApp
+      function sendViaWhatsApp() {
+        const services = JSON.parse(invoiceBtn.dataset.services);
+        const subtotal = invoiceBtn.dataset.subtotal;
+        const discount = invoiceBtn.dataset.discount;
+        const total = invoiceBtn.dataset.total;
+        const hasDiscount = invoiceBtn.dataset.hasDiscount === 'true';
+        
+        // Mark discount as used (only first time)
+        if (hasDiscount && !localStorage.getItem(DISCOUNT_KEY)) {
+          localStorage.setItem(DISCOUNT_KEY, 'used');
+          updateDiscountUI();
+        }
+        
+        let message = `Hello, I'd like to get a quote from Amjad Creative Services:\n\n`;
+        
+        services.forEach((service, index) => {
+          message += `➡ ${service.name}\n`;
+          message += `   Qty: ${service.quantity}\n`;
+          message += `   Price: $${service.price.toFixed(2)}\n`;
+          message += `   Total: $${service.total.toFixed(2)}\n\n`;
+        });
+        
+        message += `\nSubtotal: $${parseFloat(subtotal).toFixed(2)}\n`;
+        
+        if (hasDiscount) {
+          message += `Discount (15%): $${parseFloat(discount).toFixed(2)}\n`;
+        }
+        
+        message += `TOTAL: $${parseFloat(total).toFixed(2)}\n\n`;
+        
+        if (hasDiscount) {
+          message += `*This quote includes a 15% first order discount.*\n\n`;
+        }
+        
+        message += `I'm interested in this quote, could you contact me for details?`;
+        
+        const phoneNumber = "905385818771";
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        
+        window.open(whatsappUrl, '_blank');
+      }
+      
+      // Add service to calculator when clicked
+      function addServiceToCalculator(serviceName, servicePrice) {
+        // Open calculator if not already open
+        if (!calculatorContainer.classList.contains('active')) {
+          calculatorContainer.classList.add('active');
+          createServiceOptions();
+        }
+        
+        // Find service selection fields
+        const serviceSelects = document.querySelectorAll('.service-select');
+        
+        // Find an empty selection field
+        let emptySelect = null;
+        for (let i = 0; i < serviceSelects.length; i++) {
+          if (!serviceSelects[i].value) {
+            emptySelect = serviceSelects[i];
+            break;
+          }
+        }
+        
+        // If no empty field, add a new one
+        if (!emptySelect) {
+          addServiceField();
+          // Find the newly added field
+          const newSelect = document.querySelectorAll('.service-select');
+          emptySelect = newSelect[newSelect.length - 1];
+        }
+        
+        // Select the service
+        for (let i = 0; i < emptySelect.options.length; i++) {
+          if (emptySelect.options[i].text.includes(serviceName)) {
+            emptySelect.selectedIndex = i;
+            break;
+          }
+        }
+        
+        // Add animation
+        const formGroup = emptySelect.closest('.form-group');
+        formGroup.classList.add('service-added');
+        setTimeout(() => {
+          formGroup.classList.remove('service-added');
+        }, 1000);
+        
+        // Calculate total
+        calculateTotal();
+      }
+      
+      // Event listeners
+      calculatorBtn.addEventListener('click', function() {
+        calculatorContainer.classList.toggle('active');
+        if (calculatorContainer.classList.contains('active')) {
+          createServiceOptions();
+        }
+      });
+      
+      closeCalculator.addEventListener('click', function() {
+        calculatorContainer.classList.remove('active');
+      });
+      
+      calculateBtn.addEventListener('click', calculateTotal);
+      invoiceBtn.addEventListener('click', generateInvoice);
+      whatsappBtn.addEventListener('click', sendViaWhatsApp);
+      
+      // Add click event to service items
+      document.querySelectorAll('.service-item').forEach(item => {
+        item.addEventListener('click', function() {
+          const serviceName = this.dataset.name;
+          const servicePrice = this.dataset.price;
+          addServiceToCalculator(serviceName, servicePrice);
+        });
+      });
+      
+      // Hide calculator on page load
+      calculatorContainer.classList.remove('active');
+    });
+  </script>
+</body>
+</html>
